@@ -19,18 +19,19 @@ type Target struct {
 	Followed_by bool   `json:"followed_by"`
 }
 type Source struct {
-	Id                    int64
-	Id_str                string
-	Screen_name           string
-	Following             bool
-	Followed_by           bool
-	Can_dm                bool
-	Blocking              bool
-	Muting                bool
-	Marked_spam           bool
-	All_replies           bool
-	Want_retweets         bool
-	Notifications_enabled bool
+	Id                    int64  `json:"id"`
+	Id_str                string `json:"id_str"`
+	Screen_name           string `json:"screen_name"`
+	Following             bool   `json:"following"`
+	Followed_by           bool   `json:"followed_by"`
+	Can_dm                bool   `json:"can_dm"`
+	Blocking              bool   `json:"blocking"`
+	Blocked_By            bool   `json:"blocked_by"`
+	Muting                bool   `json:"muting"`
+	Marked_spam           bool   `json:"marked_spam"`
+	All_replies           bool   `json:"all_replies"`
+	Want_retweets         bool   `json:"want_retweets"`
+	Notifications_enabled bool   `json:"notifications_enabled"`
 }
 
 func (a TwitterApi) GetFriendshipsShow(v url.Values) (relationshipResponse RelationshipResponse, err error) {
